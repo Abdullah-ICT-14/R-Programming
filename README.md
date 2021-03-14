@@ -1,2 +1,2 @@
 # R-programming
-All the programs are written in rstdio of anaconda distribution.
+All the programs are written in rstudio of anaconda distribution.
