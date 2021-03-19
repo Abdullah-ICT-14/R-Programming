@@ -22,3 +22,12 @@ library(kableExtra) # markdown tables
 # Loading our train and test dataset.
 train <- read.csv("train.csv")
 test <- read.csv("test.csv")
+
+# Check the data
+str(train)
+str(test)
+
+
+# a quick look at train and test data.
+View(train)
+View(test)
