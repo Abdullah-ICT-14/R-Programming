@@ -18,3 +18,7 @@ library(pROC) # ROC curves
 library(RColorBrewer) 
 library(Hmisc)
 library(kableExtra) # markdown tables
+
+# Loading our train and test dataset.
+train <- read.csv("train.csv")
+test <- read.csv("test.csv")
