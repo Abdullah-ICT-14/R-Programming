@@ -1,0 +1,33 @@
+# Multiple Linear Regression
+
+# Importing dataset
+df = read.csv("50_Startups.csv")
+
+
+# Encoding categorical data
+df$State = factor(df$State,
+                  levels=c('New York','California','Florida'),
+                  labels = c(1,2,3))
+
+# Split into train and test set.
+library(caTools)
+set.seed(42)
+split=sample.split(df$Profit,SplitRatio = 0.8)
+train_set=subset(df,split==TRUE)
+test_set=subset(df,split !=TRUE)
+
+
+# Fitting Multiple linear regression with train data.
+model = lm(formula = Profit ~ .,data = train_set)
+summary(model)
+
+
+# Predicting the test results
+y_pred = predict(model,newdata = test_set)
+y_pred
+
+
+# Building the optional model using Backward elimination
+model=lm(formula = Profit ~ R.D.Spend + Administration + 
+           Marketing.Spend + State,data = df)
+summary(model)
