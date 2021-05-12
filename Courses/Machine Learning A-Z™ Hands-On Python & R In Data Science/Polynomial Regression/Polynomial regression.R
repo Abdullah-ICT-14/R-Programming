@@ -43,3 +43,9 @@ ggplot() +
 # Predicting the result with Polynomial regression
 y_pred =predict(pr,newdata = df)
 y_pred
+
+preds_value = predict(pr,data.frame(Level=6.5,
+                                    Level2=6.5^2,
+                                    Level3=6.5^3,
+                                    Level4=6.5^4))
+preds_value
